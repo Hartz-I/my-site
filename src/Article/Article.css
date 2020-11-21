@@ -1,0 +1,23 @@
+.Article {
+  color: lightgoldenrodyellow;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 16px;
+  text-align: center;
+  background: #831414;
+  width: 90%;
+  background-color: #222021;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.7);
+}
+
+.article-img {
+  border-radius: 20%;
+  width: 50%;
+}
