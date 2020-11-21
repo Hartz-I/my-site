@@ -62,7 +62,7 @@
 }
 
 /* small screen */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .NavBar {
     bottom: 0;
     width: 100vw;

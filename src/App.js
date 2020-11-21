@@ -3,6 +3,7 @@ import "./App.css";
 import Article from "./Article/Article";
 import Header from "./Header/Header";
 import NavBar from "./NavBar/NavBar";
+import SearchBar from "./SearchBar/SearchBar";
 
 class App extends Component {
   state = {
@@ -27,12 +28,36 @@ class App extends Component {
       },
     ],
     wideView: false,
+    searchField: [],
   };
 
   onClickHandler = () => {
     this.setState({
       wideView: true,
     });
+  };
+
+  searhChangeHandler = (event) => {
+    const articles = [...this.state.articles];
+
+    let newArticles = [];
+
+    let searchField = event.target.value;
+
+    console.log(searchField.length);
+
+    for (let i = 0; i < this.state.articles.length; i++) {
+      if (
+        articles[i].title.slice(0, searchField.length).toLocaleLowerCase() ===
+        searchField.toLocaleLowerCase()
+      ) {
+        console.log("Matched!");
+        newArticles.push(articles[i]);
+      }
+    }
+    this.state.searchField = newArticles;
+
+    this.setState({ articles: this.state.searchField });
   };
 
   render() {
@@ -50,6 +75,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <SearchBar placeholder="Search..." changed={this.searhChangeHandler} />
         <NavBar />
         <article className="Art">
           {this.state.articles.map((card, index) => {
