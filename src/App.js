@@ -34,6 +34,10 @@ class App extends Component {
     ],
     searchView: [],
     searchViewBool: false,
+    searchNotFound: {
+      title: "Sorry!",
+      massage: "None of the contents match your given input!",
+    },
   };
 
   onClickHandler = () => {

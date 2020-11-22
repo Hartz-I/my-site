@@ -8,6 +8,7 @@ const SearchBar = (props) => {
         type="search"
         placeholder={props.placeholder}
         onChange={props.changed}
+        className="searchBox"
       ></input>
       <span>
         <button type="button" onClick={props.clicked}>
