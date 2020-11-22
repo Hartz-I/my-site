@@ -5,11 +5,18 @@
 }
 
 input {
+  height: 40px;
   width: 100%;
-  background: black;
+  background: #202020;
+  background-image: url(https://p.kindpng.com/picc/s/20-204412_white-magnifying-glass-icon-png-transparent-png.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: right;
   color: wheat;
+  border-radius: 3px;
 }
 
 ::placeholder {
-  color: wheat;
+  color: white;
+  text-align: right;
 }

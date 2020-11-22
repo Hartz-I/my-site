@@ -80,7 +80,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <SearchBar placeholder="Search..." changed={this.searhChangeHandler} />
+        <SearchBar
+          placeholder={"Search for content..." + "              "}
+          changed={this.searhChangeHandler}
+        />
         <NavBar />
         <article className="grid-container">
           {display.map((card, index) => {

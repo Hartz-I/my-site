@@ -10,11 +10,6 @@ const SearchBar = (props) => {
         onChange={props.changed}
         className="searchBox"
       ></input>
-      <span>
-        <button type="button" onClick={props.clicked}>
-          Search
-        </button>
-      </span>
     </div>
   );
 };
