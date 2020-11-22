@@ -26,9 +26,14 @@ class App extends Component {
           "https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg",
         para: "Aww! isn't that cute!",
       },
+      { title: "New Dawn", para: "Some new movie" },
+      {
+        title: "Have you ever thought about the meaning lessness of life?",
+        para: "Work in progress again!!!",
+      },
     ],
-    wideView: false,
-    searchField: [],
+    searchView: [],
+    searchViewBool: false,
   };
 
   onClickHandler = () => {
@@ -49,27 +54,23 @@ class App extends Component {
     for (let i = 0; i < this.state.articles.length; i++) {
       if (
         articles[i].title.slice(0, searchField.length).toLocaleLowerCase() ===
-        searchField.toLocaleLowerCase()
+        searchField.slice(0, searchField.length).toLocaleLowerCase()
       ) {
         console.log("Matched!");
         newArticles.push(articles[i]);
       }
     }
-    this.state.searchField = newArticles;
 
-    this.setState({ articles: this.state.searchField });
+    this.setState({ searchView: newArticles, searchViewBool: true });
   };
 
   render() {
     //abc
-    let wideViewTab = null;
 
-    if (this.wideView) {
-      wideViewTab = (
-        <div>
-          <h1>Hi! Is this working?</h1>
-        </div>
-      );
+    let display = [...this.state.articles];
+
+    if (this.state.searchViewBool) {
+      display = [...this.state.searchView];
     }
 
     return (
@@ -77,8 +78,8 @@ class App extends Component {
         <Header />
         <SearchBar placeholder="Search..." changed={this.searhChangeHandler} />
         <NavBar />
-        <article className="Art">
-          {this.state.articles.map((card, index) => {
+        <article className="grid-container">
+          {display.map((card, index) => {
             return (
               <Article
                 title={card.title}
@@ -89,7 +90,6 @@ class App extends Component {
               />
             );
           })}
-          {wideViewTab}
         </article>
       </div>
     );

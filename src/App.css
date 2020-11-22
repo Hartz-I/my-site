@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.Art {
+.grid-container {
+  display: grid;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -17,10 +18,12 @@
 }
 
 @media (min-width: 700px) {
-  .Art {
+  .grid-container {
     margin-left: 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .grid-item {
+    margin-left: 1rem;
   }
 }
